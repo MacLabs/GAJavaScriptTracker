@@ -8,6 +8,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/MacLabs/GAJavaScriptTracker.git", :tag => "0.0.1" }
   s.platform     = :osx
   s.source_files = 'GAJavaScriptTracker/**/*.{h,m}'
+  s.resource   = 'GAJavaScriptTracker/**/*.{js,html}'
   # s.exclude_files = 'Classes/Exclude'
   s.framework    = 'Webkit'
   s.public_header_files = 'GAJavaScriptTracker/**/*.h'
