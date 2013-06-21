@@ -205,7 +205,7 @@ static NSString* GAEscapeNSString(NSString* value) {
     
     id js;
     if(label && value>=0) {
-        js = [NSString stringWithFormat:@"_gaq.push(['_trackEvent', '%@', '%@', '%@', %d])", category, action, label, value];
+        js = [NSString stringWithFormat:@"_gaq.push(['_trackEvent', '%@', '%@', '%@', %ld])", category, action, label, (long)value];
     }
     else if(label) {
         js = [NSString stringWithFormat:@"_gaq.push(['_trackEvent', '%@', '%@', '%@'])", category, action, label];
