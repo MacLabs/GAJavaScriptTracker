@@ -9,7 +9,7 @@
 
 @synthesize tracket;
 
-- (GAGoogleAnalytics *) intiWithId:(NSString *)aAnalyticsId {
+- (GAGoogleAnalytics *) initWithId: (NSString *) aAnalyticsId{
     GAGoogleAnalytics *ga = [super init];
     if (self) {
         ga.tracket = [GAJavaScriptTracker trackerWithAccountID:aAnalyticsId];

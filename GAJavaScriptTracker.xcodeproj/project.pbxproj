@@ -127,13 +127,13 @@
 			children = (
 				96144B48177404B50064EB43 /* GAGoogleAnalytics.h */,
 				96144B49177404B50064EB43 /* GAGoogleAnalytics.m */,
-				B431A38F159893FC00277663 /* Supporting Files */,
 				B431A395159893FC00277663 /* GAJavaScriptTracker.h */,
 				B431A396159893FC00277663 /* GAJavaScriptTracker.m */,
 				B431A3AB159897E000277663 /* GAJSWebViewEngine.h */,
 				B431A3AC159897E000277663 /* GAJSWebViewEngine.m */,
 				B431A3AF159898F900277663 /* main.html */,
 				B43B53F21598CFF700E60671 /* ga.js */,
+				B431A38F159893FC00277663 /* Supporting Files */,
 			);
 			path = GAJavaScriptTracker;
 			sourceTree = "<group>";

@@ -16,7 +16,7 @@
 
 @property (nonatomic, strong) GAJavaScriptTracker *tracket;
 
-- (GAGoogleAnalytics *) intiWithId: (NSString *) aAnalyticsId;
+- (GAGoogleAnalytics *) initWithId: (NSString *) aAnalyticsId;
 // 记录页面浏览
 - (void) trackPageview: (NSString *) pageName ;
 // 记录页面事件，比如 Button Click
