@@ -8,13 +8,24 @@
 
 #import <Foundation/Foundation.h>
 #import <WebKit/WebKit.h>
+#import "GAJSWebViewEngine.h"
 
 /** @file GAJavaScriptTracker.h */
 
 /**
  * provides a Google Analytics Tracker for OSX by wrapping the original (slightly modified to allow offline usage) google analytics javascript. It contains a private Webview that executes the script in the background.
  */
-@interface GAJavaScriptTracker : NSObject
+@interface GAJavaScriptTracker : NSObject {
+    NSString *_accountID;
+    BOOL _running;
+    NSUInteger _batchSize;
+    NSTimeInterval _batchInterval;
+    BOOL _debug;
+    BOOL _anonymizeIp;
+    GAJSWebViewEngine *_JSEngine;
+    BOOL _dryRun;
+    WebView *_debugwebview;
+}
 
 /**
  * This method tries to find a tracker for the specified Google Analytics account ID (the string that begins with "UA-") in an internal List. If no tracker for that ID is up, it inits a new one
@@ -115,4 +126,5 @@
              value:(NSInteger)value
          withError:(NSError **)error;
 
+- (BOOL) setCustomVar: (int) varIndex withKey:(NSString *) key value: (NSString *) value;
 @end

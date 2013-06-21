@@ -26,9 +26,7 @@ static NSString* GAEscapeNSString(NSString* value) {
     return escapedString;
 }
 
-@implementation GAJavaScriptTracker {
-    GAJSWebViewEngine *_JSEngine;
-}
+@implementation GAJavaScriptTracker
 
 @synthesize dryRun=_dryRun;
 @synthesize debug=_debug;
@@ -207,7 +205,7 @@ static NSString* GAEscapeNSString(NSString* value) {
     
     id js;
     if(label && value>=0) {
-        js = [NSString stringWithFormat:@"_gaq.push(['_trackEvent', '%@', '%@', '%@', %ld])", category, action, label, value];
+        js = [NSString stringWithFormat:@"_gaq.push(['_trackEvent', '%@', '%@', '%@', %d])", category, action, label, value];
     }
     else if(label) {
         js = [NSString stringWithFormat:@"_gaq.push(['_trackEvent', '%@', '%@', '%@'])", category, action, label];
@@ -215,6 +213,11 @@ static NSString* GAEscapeNSString(NSString* value) {
     else {
         js = [NSString stringWithFormat:@"_gaq.push(['_trackEvent', '%@', '%@'])", category, action];
     }
+    return [self executeScript:js];
+}
+
+- (BOOL) setCustomVar: (int) varIndex withKey:(NSString *) key value: (NSString *) value {
+    NSString *js = [NSString stringWithFormat:@"_gaq.push(['_setCustomVar', %d, '%@', '%@',1])", varIndex, key, value];
     return [self executeScript:js];
 }
 
