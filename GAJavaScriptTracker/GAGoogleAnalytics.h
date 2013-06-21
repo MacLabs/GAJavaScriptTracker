@@ -1,6 +1,4 @@
 //
-//  WWGoogleAnalytics.h
-//  AliWangwang
 //
 //  Created by Jason Lee on 12-10-26.
 //  Copyright (c) 2012年 Taobao.com. All rights reserved.
